@@ -133,7 +133,7 @@ function gerarCodigo() {
   return `DAIK-${new Date().getFullYear()}-${sufixo}`;
 }
 
-function finalizar() {
+async function finalizar() {
   const pedido = {
     codigo: gerarCodigo(),
     data: new Date().toLocaleString("pt-BR"),
@@ -150,16 +150,28 @@ function finalizar() {
     descricao: document.getElementById("orc-desc").value.trim(),
   };
 
-  // Por enquanto salva neste navegador. Quando o backend entrar,
-  // este bloco vira: await fetch("/api/orcamentos", { method: "POST", ... })
+  // Salva localmente (mantém a consulta de andamento funcionando)
   const lista = JSON.parse(localStorage.getItem("daik_orcamentos") || "[]");
   lista.push(pedido);
   localStorage.setItem("daik_orcamentos", JSON.stringify(lista));
 
+  // Mostra a tela de sucesso já (não trava esperando o email)
   document.getElementById("orc-codigo").textContent = pedido.codigo;
   document.getElementById("wizard").hidden = true;
   document.getElementById("sucesso").hidden = false;
   window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // Envia o email pra empresa em segundo plano
+  try {
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pedido),
+    });
+  } catch (err) {
+    console.error("Erro ao notificar por email:", err);
+    // não interrompe o fluxo do usuário — ele já viu o código de sucesso
+  }
 }
 
 document.getElementById("copiar-codigo").addEventListener("click", () => {

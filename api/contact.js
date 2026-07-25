@@ -1,40 +1,55 @@
-async function finalizar() {
-  const pedido = {
-    codigo: gerarCodigo(),
-    data: new Date().toLocaleString("pt-BR"),
-    status: "Recebido — em análise",
-    servicos: dados.servicos,
-    detalhes: dados.detalhes,
-    porte: dados.porte,
-    prazo: dados.prazo[0] || "Não informado",
-    investimento: dados.investimento,
-    nome: document.getElementById("orc-nome").value.trim(),
-    empresa: document.getElementById("orc-empresa").value.trim(),
-    whatsapp: document.getElementById("orc-whats").value.trim(),
-    email: document.getElementById("orc-email").value.trim(),
-    descricao: document.getElementById("orc-desc").value.trim(),
-  };
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Método não permitido' });
+  }
 
-  // Salva localmente (mantém a consulta de andamento funcionando)
-  const lista = JSON.parse(localStorage.getItem("daik_orcamentos") || "[]");
-  lista.push(pedido);
-  localStorage.setItem("daik_orcamentos", JSON.stringify(lista));
+  const {
+    codigo, nome, empresa, whatsapp, email, descricao,
+    servicos, detalhes, porte, prazo, investimento,
+  } = req.body;
 
-  // Mostra a tela de sucesso já (não trava esperando o email)
-  document.getElementById("orc-codigo").textContent = pedido.codigo;
-  document.getElementById("wizard").hidden = true;
-  document.getElementById("sucesso").hidden = false;
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (!nome || !whatsapp) {
+    return res.status(400).json({ error: 'Nome e WhatsApp são obrigatórios' });
+  }
 
-  // Envia o email pra empresa em segundo plano enviado
   try {
-    await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(pedido),
+    const resendRes = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'DAIK CORP <onboarding@resend.dev>',
+        to: ['daikcorpsolutions@gmail.com'],
+        subject: `Novo orçamento: ${nome} (${codigo})`,
+        html: `
+          <h2>Novo pedido de orçamento</h2>
+          <p><strong>Código:</strong> ${codigo}</p>
+          <p><strong>Nome:</strong> ${nome}</p>
+          <p><strong>Empresa:</strong> ${empresa || 'não informado'}</p>
+          <p><strong>WhatsApp:</strong> ${whatsapp}</p>
+          <p><strong>E-mail:</strong> ${email || 'não informado'}</p>
+          <hr />
+          <p><strong>Serviços:</strong> ${(servicos || []).join(', ') || '-'}</p>
+          <p><strong>Detalhes:</strong> ${(detalhes || []).join(', ') || '-'}</p>
+          <p><strong>Porte:</strong> ${porte || '-'}</p>
+          <p><strong>Prazo:</strong> ${prazo || '-'}</p>
+          <p><strong>Investimento:</strong> ${investimento || '-'}</p>
+          <hr />
+          <p><strong>Descrição:</strong></p>
+          <p>${descricao || 'sem detalhes adicionais'}</p>
+        `,
+      }),
     });
+
+    if (!resendRes.ok) {
+      const erro = await resendRes.text();
+      return res.status(500).json({ error: 'Erro ao enviar email', detalhe: erro });
+    }
+
+    return res.status(200).json({ sucesso: true });
   } catch (err) {
-    console.error("Erro ao notificar por email:", err);
-    // não interrompe o fluxo do usuário — ele já viu o código de sucesso
+    return res.status(500).json({ error: 'Erro interno', detalhe: err.message });
   }
 }
