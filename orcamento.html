@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solicitar Orçamento — DAIK CORP</title>
+  <meta name="description" content="Monte seu orçamento em 4 passos e receba um código de acompanhamento. DAIK CORP — soluções tecnológicas." />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <meta name="theme-color" content="#050505" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/orcamento.css" />
+</head>
+<body class="orc-page">
+
+  <!-- ===== FUNDO ANIMADO ===== -->
+  <div class="estrelas" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <img src="img/logo.png" alt="" class="orc-marca" aria-hidden="true"
+       onerror="this.style.display='none'" />
+  <div class="orc-flutuantes" aria-hidden="true">
+    <span>R$</span><span>%</span><span>✓</span><span>+</span>
+    <span>R$</span><span>%</span><span>✓</span><span>+</span>
+  </div>
+
+  <!-- ===== HEADER SIMPLIFICADO ===== -->
+  <header class="site-header scrolled">
+    <a class="brand" href="index.html">
+      <img src="img/logo.png" alt="DAIK CORP" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+      <span class="brand-fallback" style="display:none">DAIK<em>CORP</em></span>
+    </a>
+    <a href="index.html" class="orc-voltar">← Voltar ao site</a>
+  </header>
+
+  <main class="orc-main">
+
+    <!-- ===== WIZARD ===== -->
+    <div class="orc-wizard" id="wizard">
+      <div class="orc-head">
+        <span class="index-tag">● Orçamento</span>
+        <h1>Monte seu <em class="rubro">orçamento</em></h1>
+        <p class="orc-sub">4 passos rápidos. Sem compromisso. Resposta em até 24h úteis.</p>
+      </div>
+
+      <!-- indicador de passos -->
+      <div class="orc-steps" aria-hidden="true">
+        <div class="orc-step-dot active" data-step="1"><span>1</span><small>Serviço</small></div>
+        <div class="orc-step-line"></div>
+        <div class="orc-step-dot" data-step="2"><span>2</span><small>Detalhes</small></div>
+        <div class="orc-step-line"></div>
+        <div class="orc-step-dot" data-step="3"><span>3</span><small>Prazo</small></div>
+        <div class="orc-step-line"></div>
+        <div class="orc-step-dot" data-step="4"><span>4</span><small>Contato</small></div>
+      </div>
+
+      <div class="orc-grid">
+        <!-- coluna do formulário -->
+        <div class="orc-form glass">
+
+          <!-- PASSO 1 -->
+          <section class="orc-pane active" data-pane="1">
+            <h2>O que você precisa?</h2>
+            <p class="orc-hint">Pode marcar mais de um.</p>
+            <div class="orc-options">
+              <button type="button" class="orc-opt" data-group="servicos" data-value="Site Profissional">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg>Site Profissional
+              </button>
+              <button type="button" class="orc-opt" data-group="servicos" data-value="Sistema Web">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6M13 4l-2 16"/></svg>Sistema Web
+              </button>
+              <button type="button" class="orc-opt" data-group="servicos" data-value="Ponto Digital (funcionários)">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.8L6.6 19.7l1-6L3.2 9.4l6.1-.9z"/></svg>Ponto Digital (funcionários)
+              </button>
+              <button type="button" class="orc-opt" data-group="servicos" data-value="Aplicativo Mobile">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg>Aplicativo Mobile
+              </button>
+              <button type="button" class="orc-opt" data-group="servicos" data-value="Segurança e Monitoramento">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Segurança / Monitoramento
+              </button>
+              <button type="button" class="orc-opt" data-group="servicos" data-value="Automação e IA">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9 17h6"/></svg>Automação / IA
+              </button>
+            </div>
+          </section>
+
+          <!-- PASSO 2 -->
+          <section class="orc-pane" data-pane="2">
+            <h2>Detalhes do projeto</h2>
+            <p class="orc-hint">Marque o que faz sentido — ajuda a gente a calcular certo.</p>
+            <div class="orc-options">
+              <button type="button" class="orc-opt" data-group="detalhes" data-value="Banco de dados">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Banco de dados
+              </button>
+              <button type="button" class="orc-opt" data-group="detalhes" data-value="Painel administrativo">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 21h18M7 21V12M12 21V7M17 21v-6"/></svg>Painel administrativo
+              </button>
+              <button type="button" class="orc-opt" data-group="detalhes" data-value="Integração WhatsApp">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12c0 4-4 7-9 7-1 0-2-.1-3-.4L4 20l1.2-3.6C4 15.2 3 13.7 3 12c0-4 4-7 9-7s9 3 9 7z"/></svg>Integração WhatsApp
+              </button>
+              <button type="button" class="orc-opt" data-group="detalhes" data-value="Vídeo / Marketing Digital">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="M15 10.5l6-3.5v10l-6-3.5"/></svg>Vídeo / Marketing Digital
+              </button>
+              <button type="button" class="orc-opt" data-group="detalhes" data-value="Login de usuários">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>Login de usuários
+              </button>
+              <button type="button" class="orc-opt" data-group="detalhes" data-value="Relatórios">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M21 7h-6M21 7v6"/></svg>Relatórios
+              </button>
+            </div>
+            <div class="field" style="margin-top:1.4rem">
+              <label for="porte">Porte do projeto</label>
+              <select id="porte" class="orc-select">
+                <option value="Ainda não sei">Ainda não sei</option>
+                <option value="Pequeno">Pequeno — começando agora</option>
+                <option value="Médio">Médio — empresa em crescimento</option>
+                <option value="Grande">Grande — operação estruturada</option>
+              </select>
+            </div>
+          </section>
+
+          <!-- PASSO 3 -->
+          <section class="orc-pane" data-pane="3">
+            <h2>Prazo e investimento</h2>
+            <p class="orc-hint">Qual a urgência do projeto?</p>
+            <div class="orc-options orc-options-1col">
+              <button type="button" class="orc-opt" data-group="prazo" data-single data-value="Urgente — até 2 semanas">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>Urgente — até 2 semanas
+              </button>
+              <button type="button" class="orc-opt" data-group="prazo" data-single data-value="Normal — até 1 mês">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Normal — até 1 mês
+              </button>
+              <button type="button" class="orc-opt" data-group="prazo" data-single data-value="Flexível — sem pressa">
+                <svg class="orc-opt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21v-8M12 13c0-4 3-7 8-7 0 4-3 7-8 7zM12 13c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg>Flexível — sem pressa
+              </button>
+            </div>
+            <div class="field" style="margin-top:1.4rem">
+              <label for="investimento">Faixa de investimento (opcional)</label>
+              <select id="investimento" class="orc-select">
+                <option value="Prefiro não informar">Prefiro não informar</option>
+                <option value="Até R$ 3 mil">Até R$ 3 mil</option>
+                <option value="R$ 3 a 8 mil">R$ 3 a 8 mil</option>
+                <option value="R$ 8 a 20 mil">R$ 8 a 20 mil</option>
+                <option value="Acima de R$ 20 mil">Acima de R$ 20 mil</option>
+              </select>
+            </div>
+          </section>
+
+          <!-- PASSO 4 -->
+          <section class="orc-pane" data-pane="4">
+            <h2>Seus dados</h2>
+            <p class="orc-hint">Pra gente te enviar o orçamento certinho.</p>
+            <div class="orc-fields">
+              <div class="field">
+                <label for="orc-nome">Nome *</label>
+                <input type="text" id="orc-nome" placeholder="Seu nome" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="orc-empresa">Empresa</label>
+                <input type="text" id="orc-empresa" placeholder="Nome da empresa" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="orc-whats">WhatsApp *</label>
+                <input type="tel" id="orc-whats" placeholder="(21) 99999-9999" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="orc-email">E-mail</label>
+                <input type="email" id="orc-email" placeholder="voce@empresa.com" autocomplete="email" />
+              </div>
+              <div class="field field-full">
+                <label for="orc-desc">Conte mais (opcional)</label>
+                <textarea id="orc-desc" rows="3" placeholder="Descreva sua ideia em poucas linhas"></textarea>
+              </div>
+            </div>
+          </section>
+
+          <!-- navegação -->
+          <div class="orc-nav">
+            <button type="button" class="btn btn-ghost" id="orc-voltar" disabled>← Voltar</button>
+            <p class="orc-erro" id="orc-erro" role="alert"></p>
+            <button type="button" class="btn btn-red" id="orc-avancar">Avançar →</button>
+          </div>
+        </div>
+
+        <!-- coluna do resumo -->
+        <aside class="orc-resumo glass">
+          <h3>Resumo do pedido</h3>
+          <div id="resumo-conteudo">
+            <p class="orc-resumo-vazio">Suas escolhas aparecem aqui conforme você avança.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ===== TELA DE SUCESSO ===== -->
+    <div class="orc-sucesso glass" id="sucesso" hidden>
+      <div class="orc-sucesso-ico">✓</div>
+      <h2>Orçamento <em class="rubro">registrado!</em></h2>
+      <p>Guarde seu código de acompanhamento:</p>
+      <div class="orc-codigo" id="orc-codigo">DAIK-0000-0000</div>
+      <button type="button" class="btn btn-ghost btn-sm" id="copiar-codigo">Copiar código</button>
+      <p class="orc-sucesso-nota">
+        Nossa equipe analisa seu pedido e responde em até <strong>24 horas úteis</strong>
+        pelo WhatsApp informado. Use o código abaixo pra consultar o andamento.
+      </p>
+      <a href="index.html" class="orc-voltar-link">← Voltar ao início</a>
+    </div>
+
+    <!-- ===== CONSULTAR ANDAMENTO ===== -->
+    <div class="orc-consulta glass">
+      <h3>Já tem um código? <em class="rubro">Consulte o andamento</em></h3>
+      <div class="orc-consulta-linha">
+        <input type="text" id="consulta-codigo" placeholder="DAIK-2026-XXXX" autocomplete="off" />
+        <button type="button" class="btn btn-red" id="consulta-btn">Consultar</button>
+      </div>
+      <p class="orc-consulta-res" id="consulta-res" role="status"></p>
+    </div>
+
+  </main>
+
+  <footer class="orc-footer">
+    <span>© 2026 DAIK CORP · Todos os direitos reservados.</span>
+  </footer>
+
+  <script src="js/orcamento.js"></script>
+</body>
+</html>

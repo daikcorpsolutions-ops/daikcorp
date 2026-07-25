@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAIK CORP — A tecnologia que protege e impulsiona seu negócio</title>
+  <meta name="description" content="A DAIK CORP desenvolve soluções inteligentes em tecnologia, segurança, automação e inteligência artificial para empresas que buscam inovação, eficiência e crescimento." />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <meta name="theme-color" content="#050505" />
+  <link rel="canonical" href="https://daikcorp.vercel.app/" />
+  <link rel="apple-touch-icon" href="img/logo.png" />
+  <meta property="og:url" content="https://daikcorp.vercel.app/" />
+  <meta property="og:image" content="https://daikcorp.vercel.app/img/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DAIK CORP — Soluções Tecnológicas" />
+  <meta name="twitter:description" content="Sites, sistema de ponto digital, painéis de gestão e mais. Tecnologia sob medida para a sua empresa." />
+  <meta name="twitter:image" content="https://daikcorp.vercel.app/img/logo.png" />
+  <meta property="og:title" content="DAIK CORP — Soluções Tecnológicas" />
+  <meta property="og:description" content="Tecnologia, IA, automação e segurança para empresas que querem crescer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <img src="img/logo.png" alt="" class="preloader-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+      <span class="preloader-fallback" style="display:none">DAIK&nbsp;CORP</span>
+      <div class="preloader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ===== BARRA DE PROGRESSO ===== -->
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- ===== PARTÍCULAS DE FUNDO ===== -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- ===== ESTRELAS CADENTES ===== -->
+  <div class="estrelas" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="topo">
+    <a class="brand" href="#topo">
+      <img src="img/logo.png" alt="DAIK CORP" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+      <span class="brand-fallback" style="display:none">DAIK<em>CORP</em></span>
+    </a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <div class="nav-pill">
+        <a href="#topo" class="active">Início</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a href="orcamento.html" class="btn btn-red btn-header">Solicitar Orçamento</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <img src="img/logo.png" alt="" class="hero-marca" aria-hidden="true"
+           onerror="this.style.display='none'" />
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="tag reveal">● Tecnologia · IA · Segurança</p>
+          <h1 class="hero-title">
+            <span class="line"><span>A tecnologia que</span></span>
+            <span class="line"><span class="rubro">protege.</span></span>
+            <span class="line"><span>impulsiona.</span></span>
+            <span class="line"><span>converte<em class="rubro">.</em></span></span>
+          </h1>
+          <p class="hero-sub">
+            A DAIK CORP desenvolve soluções inteligentes em tecnologia, segurança,
+            automação e inteligência artificial para empresas que buscam inovação,
+            eficiência e crescimento.
+          </p>
+          <div class="hero-actions">
+            <a href="#solucoes" class="btn btn-red"><span class="btn-ico">→</span>Conheça nossas soluções</a>
+            <a href="#contato" class="btn btn-ghost">Falar com especialista</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-circle"></div>
+          <div class="orbitas">
+            <div class="orbita orbita-1"><span></span></div>
+            <div class="orbita orbita-2"><span></span><span></span></div>
+          </div>
+          <!-- Salve sua foto como img/perfil.png (ideal: fundo transparente,
+               enquadramento do peito pra cima, mínimo 800px de altura) -->
+          <img src="img/perfil.png" alt="" class="hero-foto" onerror="this.style.display='none'" />
+          <div class="hero-badge glass">
+            <span class="badge-ico badge-logo">
+              <img src="img/logo.png" alt="DAIK CORP"
+                   onerror="this.parentElement.innerHTML='↗'" />
+            </span>
+            <div>
+              <strong>João Vitor</strong>
+              <span>CEO - Daik Corp Solutions</span>
+            </div>
+          </div>
+        </div>
+        <blockquote class="citacao citacao-hero reveal">
+          <span class="citacao-tag">● Palavras do CEO</span>
+          <div class="citacao-corpo">
+            <p>"Chegamos à era em que tecnologia não é mais diferencial —
+            é sobrevivência. Quem se atualiza lidera. Quem espera, assiste."</p>
+            <footer>João Vitor <span>· CEO, DAIK CORP</span></footer>
+          </div>
+        </blockquote>
+      </div>
+
+      <!-- Cards de estatísticas (glassmorphism) -->
+      <div class="hero-stats">
+        <div class="stat-card glass reveal" data-tilt>
+          <span class="stat-value"><span data-count="3" data-suffix="">0</span></span>
+          <span class="stat-label">Especialistas no seu projeto</span>
+        </div>
+        <div class="stat-card glass reveal" data-tilt>
+          <span class="stat-value"><span data-count="24" data-suffix="h">0</span></span>
+          <span class="stat-label">Resposta garantida</span>
+        </div>
+        <div class="stat-card glass reveal" data-tilt>
+          <span class="stat-value"><span data-count="24" data-suffix="/7">0</span></span>
+          <span class="stat-label">Suporte dedicado</span>
+        </div>
+        <div class="stat-card glass reveal" data-tilt>
+          <span class="stat-value"><span data-count="100" data-suffix="%">0</span></span>
+          <span class="stat-label">Projetos sob medida</span>
+        </div>
+      </div>
+
+      <!-- Segmentos que atendemos / clientes-alvo -->
+      <div class="segmentos reveal">
+        <span class="segmentos-titulo">Clientes-alvo</span>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M4 14c1-6 7-10 13-9l4 2-3 1c1 .8 1.4 1.8 2 3l-4-.4c-2 5-8 6.4-12 3.4z"/>
+              <path d="M15.5 7.5h.01"/>
+              <path d="M6 17l-2 4M10 17l-1 4"/>
+            </svg>
+            Segurança Privada
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M14 3l7 7-4 1-4-4z"/>
+              <path d="M13 7l-9 9c-1.2 1.6-.2 4 2 4 .8 0 1.5-.3 2-1l9-8"/>
+            </svg>
+            Serviços Gerais · Facilities
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M4 10l1-5h14l1 5M5 10v10h14V10M9 20v-6h6v6"/>
+            </svg>
+            Comércio &amp; Varejo
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M7 3v6c0 1.5 1 2.5 2.5 2.5V21M12 3v5M9.5 3v5M16.5 3c-2 2.5-2 6.5 0 9V21"/>
+            </svg>
+            Restaurantes &amp; Food Service
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M3 21h18M5 21V8l5-4v17M14 21V11l5-3v13"/>
+              <path d="M8 9h.01M8 13h.01M8 17h.01M17 13h.01M17 17h.01"/>
+            </svg>
+            Condomínios &amp; Prédios
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section class="section sobre" id="sobre">
+      <canvas id="globe" aria-hidden="true"></canvas>
+      <div class="orbita-sobre" aria-hidden="true"></div>
+      <div class="sobre-copy">
+        <span class="index-tag reveal">● Sobre</span>
+        <h2 class="reveal">Tecnologia desenvolvida para empresas que querem <em class="rubro">crescer.</em></h2>
+        <p class="reveal">
+          A DAIK CORP atua criando soluções modernas em tecnologia, desenvolvimento
+          de sistemas, inteligência artificial, automação, segurança privada e
+          transformação digital.
+        </p>
+        <p class="reveal">
+          Cada projeto nasce de um diagnóstico profundo e termina em resultado
+          mensurável — com código limpo, dados seguros e suporte de verdade.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== SOLUÇÕES / SERVIÇOS ===== -->
+    <section class="section" id="solucoes">
+      <div class="section-head reveal">
+        <span class="index-tag">● Soluções</span>
+        <h2>O que a DAIK <em class="rubro">entrega</em></h2>
+      </div>
+      <div class="servicos-grid">
+        <article class="servico glass reveal" data-tilt>
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a4 4 0 0 0-4 4v1a4 4 0 0 0-2 7.5V17a4 4 0 0 0 4 4h4a4 4 0 0 0 4-4v-1.5A4 4 0 0 0 16 8V7a4 4 0 0 0-4-4z"/><path d="M9 12h6M12 9v6"/></svg>
+          <h3>Inteligência Artificial</h3>
+          <p>Automatize decisões e atendimento com IA aplicada ao seu negócio.</p>
+        </article>
+        <article class="servico glass reveal" data-tilt>
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+          <h3>Automação Empresarial</h3>
+          <p>Processos repetitivos rodando sozinhos, sem erro e sem atraso.</p>
+        </article>
+        <article class="servico glass reveal" data-tilt>
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6M13 4l-2 16"/></svg>
+          <h3>Desenvolvimento Web</h3>
+          <p>Sites e sistemas rápidos, responsivos e prontos para converter.</p>
+        </article>
+        <article class="servico glass reveal" data-tilt>
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          <h3>Aplicativos Mobile</h3>
+          <p>Registro de ponto de funcionários via celular ou tablet, com GPS e foto.</p>
+        </article>
+        <article class="servico glass reveal" data-tilt>
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Segurança Privada</h3>
+          <p>Proteção física e digital planejada para o seu patrimônio.</p>
+        </article>
+        <article class="servico glass reveal" data-tilt>
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          <h3>Monitoramento Inteligente</h3>
+          <p>Monitoramento e processamento de dados em tempo real.</p>
+        </article>
+        <article class="servico glass reveal" data-tilt>
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
+          <h3>Infraestrutura de TI</h3>
+          <p>Servidores, redes e banco de dados estruturados e seguros.</p>
+        </article>
+        <article class="servico glass reveal" data-tilt>
+          <svg class="servico-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>
+          <h3>Consultoria Tecnológica</h3>
+          <p>Direção clara para investir em tecnologia sem desperdício.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== DIFERENCIAIS ===== -->
+    <section class="section" id="diferenciais">
+      <div class="section-head reveal">
+        <span class="index-tag">● Diferenciais</span>
+        <h2>Por que escolher a <em class="rubro">DAIK CORP?</em></h2>
+      </div>
+      <ul class="dif-grid">
+        <li class="dif glass reveal"><span class="dif-check">✔</span> Tecnologia de ponta</li>
+        <li class="dif glass reveal"><span class="dif-check">✔</span> Atendimento personalizado</li>
+        <li class="dif glass reveal"><span class="dif-check">✔</span> Projetos sob medida</li>
+        <li class="dif glass reveal"><span class="dif-check">✔</span> Equipe especializada</li>
+        <li class="dif glass reveal"><span class="dif-check">✔</span> Alta performance</li>
+        <li class="dif glass reveal"><span class="dif-check">✔</span> Segurança em primeiro lugar</li>
+      </ul>
+    </section>
+
+    <!-- ===== FRASE REVELADA NO SCROLL ===== -->
+    <section class="section scrub-section" aria-label="Nossa filosofia">
+      <span class="index-tag">● Filosofia</span>
+      <p class="scrub-text">
+        Não vendemos tecnologia por vender. Cada projeto da DAIK CORP nasce para
+        entregar <em class="rubro">crescimento,</em> <em class="rubro">segurança</em> e
+        <em class="rubro">tempo</em> — porque, no fim, é disso que a sua empresa precisa
+        para chegar ao próximo nível. Tecnologia boa é a que trabalha em silêncio
+        enquanto o seu negócio aparece.
+      </p>
+    </section>
+
+    <!-- ===== PROCESSO ===== -->
+    <section class="section" id="processo">
+      <div class="section-head reveal">
+        <span class="index-tag">● Processo</span>
+        <h2>Do diagnóstico ao <em class="rubro">suporte</em></h2>
+      </div>
+      <div class="processo-grid">
+        <ol class="passos">
+          <li class="passo reveal">
+            <span class="passo-num">01</span>
+            <div><h3>Diagnóstico</h3><p>Entendemos seu negócio, seu público e o objetivo do projeto.</p></div>
+          </li>
+          <li class="passo reveal">
+            <span class="passo-num">02</span>
+            <div><h3>Planejamento</h3><p>Escopo, prazos e arquitetura definidos antes de qualquer código.</p></div>
+          </li>
+          <li class="passo reveal">
+            <span class="passo-num">03</span>
+            <div><h3>Desenvolvimento</h3><p>Código limpo, responsivo e banco de dados bem estruturado.</p></div>
+          </li>
+          <li class="passo reveal">
+            <span class="passo-num">04</span>
+            <div><h3>Implementação</h3><p>Publicação, integração e treinamento da sua equipe.</p></div>
+          </li>
+          <li class="passo reveal">
+            <span class="passo-num">05</span>
+            <div><h3>Suporte Contínuo</h3><p>Acompanhamento, ajustes e evolução constante da solução.</p></div>
+          </li>
+        </ol>
+        <aside class="term glass reveal" aria-hidden="true">
+          <div class="term-bar">
+            <span></span><span></span><span></span>
+            <em>daik@corp: ~/seu-projeto</em>
+          </div>
+          <pre class="term-body" id="term-body"></pre>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== PORTFÓLIO / PROJETOS ===== -->
+    <section class="section" id="projetos">
+      <div class="section-head reveal">
+        <span class="index-tag">● Projetos</span>
+        <h2>Portfólio em <em class="rubro">destaque</em></h2>
+      </div>
+      <div class="cases-grid">
+        <!-- IMAGENS DOS PROJETOS:
+             Salve na pasta img/ com estes nomes exatos:
+               img/case-1.jpg  → Fidelidade+
+               img/case-2.jpg  → Painel Gestor
+               img/case-3.jpg  → Site Premium
+             (pode ser .jpg ou .png — se usar .png, ajuste o src abaixo)
+             Tamanho ideal: 800x500px ou maior, proporção paisagem.
+             Enquanto a imagem não existir, o card mostra a capa com as iniciais. -->
+        <article class="case glass reveal">
+          <div class="case-media">
+            <div class="case-cover"><span>F+</span></div>
+            <img class="case-img" src="img/celular.png" alt="Projeto Ponto Digital"
+                 onerror="this.style.display='none'" />
+            <div class="case-shine"></div>
+          </div>
+          <div class="case-info">
+            <h3>Ponto Digital</h3>
+            <p>Registro de entrada e saída de funcionários com GPS e foto.</p>
+            <a href="sistema-de-pontos.html" class="btn btn-ghost btn-sm">Ver Projeto</a>
+          </div>
+        </article>
+        <article class="case glass reveal">
+          <div class="case-media">
+            <div class="case-cover"><span>PG</span></div>
+            <img class="case-img" src="img/relatorio.png" alt="Projeto Painel Gestor"
+                 onerror="this.style.display='none'" />
+            <div class="case-shine"></div>
+          </div>
+          <div class="case-info">
+            <h3>Painel Gestor</h3>
+            <p>Sistema web com banco de dados e relatórios em tempo real.</p>
+            <a href="painel-gestor.html" class="btn btn-ghost btn-sm">Ver Projeto</a>
+          </div>
+        </article>
+        <article class="case glass reveal">
+          <div class="case-media">
+            <div class="case-cover"><span>SP</span></div>
+            <img class="case-img" src="img/site.png" alt="Projeto Site Premium"
+                 onerror="this.style.display='none'" />
+            <div class="case-shine"></div>
+          </div>
+          <div class="case-info">
+            <h3>Site Premium</h3>
+            <p>Presença digital profissional com performance e SEO.</p>
+            <a href="site-premium.html" class="btn btn-ghost btn-sm">Ver Projeto</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== DEPOIMENTOS ===== -->
+    <!-- Remova o "hidden" abaixo quando tiver depoimentos REAIS de clientes -->
+    <section class="section" id="depoimentos" hidden>
+      <div class="section-head reveal">
+        <span class="index-tag">● Depoimentos</span>
+        <h2>Quem já <em class="rubro">confia</em></h2>
+      </div>
+      <div class="depo-grid">
+        <!-- Troque nomes, cargos e textos pelos reais.
+             Para foto: substitua div.depo-avatar por
+             <img class="depo-foto" src="img/depo-1.jpg" alt="Nome" /> -->
+        <article class="depo glass reveal" data-tilt>
+          <div class="depo-head">
+            <div class="depo-avatar">ML</div>
+            <div>
+              <h3>Mariana Lopes</h3>
+              <span>Diretora · Rede de Farmácias</span>
+            </div>
+          </div>
+          <div class="depo-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>"O sistema de pontos mudou nosso movimento. Cliente voltando toda semana e relatório na palma da mão."</p>
+        </article>
+        <article class="depo glass reveal" data-tilt>
+          <div class="depo-head">
+            <div class="depo-avatar">CM</div>
+            <div>
+              <h3>Carlos Menezes</h3>
+              <span>Proprietário · Academia FitPro</span>
+            </div>
+          </div>
+          <div class="depo-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>"Site novo, sistema de gestão e suporte que responde de verdade. Profissionalismo do início ao fim."</p>
+        </article>
+        <article class="depo glass reveal" data-tilt>
+          <div class="depo-head">
+            <div class="depo-avatar">AS</div>
+            <div>
+              <h3>Ana Souza</h3>
+              <span>Gerente · Restaurante Sabor &amp; Cia</span>
+            </div>
+          </div>
+          <div class="depo-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>"A automação do atendimento liberou nossa equipe pro que importa. Recomendo de olhos fechados."</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== TECNOLOGIAS (MARQUEE) ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>IA&nbsp;·&nbsp;Automação&nbsp;·&nbsp;Web&nbsp;·&nbsp;Mobile&nbsp;·&nbsp;Segurança&nbsp;·&nbsp;Monitoramento&nbsp;·&nbsp;Infraestrutura&nbsp;·&nbsp;Consultoria&nbsp;·&nbsp;</span>
+        <span>IA&nbsp;·&nbsp;Automação&nbsp;·&nbsp;Web&nbsp;·&nbsp;Mobile&nbsp;·&nbsp;Segurança&nbsp;·&nbsp;Monitoramento&nbsp;·&nbsp;Infraestrutura&nbsp;·&nbsp;Consultoria&nbsp;·&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ===== CTA ===== -->
+    <section class="section cta-section">
+      <div class="cta-band reveal">
+        <div>
+          <h2>Vamos transformar sua <em>empresa?</em></h2>
+          <p>Converse com nossos especialistas e descubra como a tecnologia pode acelerar seus resultados.</p>
+        </div>
+        <a href="orcamento.html" class="btn btn-dark">Solicitar orçamento</a>
+      </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section class="section contato" id="contato">
+      <div class="section-head reveal" style="text-align:center">
+        <span class="index-tag">● Contato</span>
+        <h2>Solicite seu <em class="rubro">orçamento</em></h2>
+        <p class="contato-sub">Resposta em até 24 horas úteis.</p>
+      </div>
+      <form class="contato-form glass reveal" id="form-contato">
+        <div class="field">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome" required autocomplete="name" placeholder="Seu nome" />
+        </div>
+        <div class="field">
+          <label for="telefone">WhatsApp *</label>
+          <input type="tel" id="telefone" name="telefone" required autocomplete="tel" placeholder="(21) 98244 - 7067" />
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="voce@empresa.com" />
+        </div>
+        <div class="field">
+          <label for="servico">Serviço de interesse</label>
+          <select id="servico" name="servico">
+            <option value="Ainda não sei">Ainda não sei</option>
+            <option value="Site Profissional">Site Profissional</option>
+            <option value="Sistema Web">Sistema Web</option>
+            <option value="Sistema de Pontos">Sistema de Pontos</option>
+            <option value="Aplicativo Mobile">Aplicativo Mobile</option>
+            <option value="Segurança / Monitoramento">Segurança / Monitoramento</option>
+            <option value="Automação / IA">Automação / IA</option>
+          </select>
+        </div>
+        <div class="field field-full">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Conte em duas linhas o que você precisa"></textarea>
+        </div>
+        <button type="submit" class="btn btn-red btn-full">Enviar mensagem</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- canais diretos — troque os dados de exemplo pelos reais -->
+      <div class="contato-extras">
+        <a class="contato-canal glass reveal" href="https://wa.me/5521982447067" target="_blank" rel="noopener">
+          <strong>WhatsApp</strong>
+          <span>(21) 98244 - 7067</span>
+        </a>
+        <a class="contato-canal glass reveal" href="mailto:contato@daikcorp.com.br">
+          <strong>E-mail</strong>
+          <span>contato@daikcorp.com.br</span>
+        </a>
+        <div class="contato-canal glass reveal">
+          <strong>Atendimento</strong>
+          <span>Seg a Sex · 9h às 18h</span>
+        </div>
+      </div>
+      <p class="contato-orc reveal">
+        Precisa de algo mais completo?
+        <a href="orcamento.html">Monte seu orçamento detalhado em 4 passos →</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- ===== WHATSAPP — troque 5521982447067 pelo seu número ===== -->
+  <a href="https://wa.me/5521982447067?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20DAIK%20CORP"
+     class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-2.9.9.9-2.8-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.1 4c-.2 0-.5 0-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.9 4.5 3.9 2.2.9 2.7.7 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3l-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5L9.5 8.1c-.2-.3-.4-.3-.6-.3z"/>
+    </svg>
+  </a>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="footer-brand">DAIK<em>CORP</em></span>
+        <p>Soluções inteligentes em tecnologia, segurança, automação e IA para empresas que querem crescer.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links rápidos</h4>
+        <a href="#topo">Início</a>
+        <a href="sistema-de-pontos.html">Sistema de Pontos</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <!-- Troque pelos seus dados reais -->
+        <a href="tel:+5521982447067">(21) 98244 - 7067</a>
+        <a href="https://wa.me/5521982447067" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:contato@daikcorp.com.br">contato@daikcorp.com.br</a>
+      </div>
+      <div class="footer-col">
+        <h4>Redes sociais</h4>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DAIK CORP. Todos os direitos reservados. · <a href="privacidade.html" class="rodape-link">Privacidade</a></span>
+      <a href="#topo" class="footer-top">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Gestor — DAIK CORP</title>
+  <meta name="description" content="Sistema web com banco de dados e relatórios em tempo real. Toda a sua operação num painel só, de onde você estiver." />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <meta name="theme-color" content="#050505" />
+  <meta property="og:title" content="Painel Gestor — DAIK CORP" />
+  <meta property="og:description" content="Sistema web sob medida: dados, relatórios e controle da sua operação em tempo real." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pontos.css" />
+  <link rel="stylesheet" href="css/painel.css" />
+</head>
+<body class="pagina-pontos">
+
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <img src="img/logo.png" alt="" class="preloader-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+      <span class="preloader-fallback" style="display:none">DAIK&nbsp;CORP</span>
+      <div class="preloader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <div class="estrelas" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="aurora aurora-1" aria-hidden="true"></div>
+  <div class="aurora aurora-2" aria-hidden="true"></div>
+  <img src="img/logo.png" alt="" class="pts-marca" aria-hidden="true"
+       onerror="this.style.display='none'" />
+
+  <header class="site-header scrolled">
+    <a class="brand" href="index.html">
+      <img src="img/logo.png" alt="DAIK CORP" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+      <span class="brand-fallback" style="display:none">DAIK<em>CORP</em></span>
+    </a>
+    <div class="pts-header-acoes">
+      <a href="index.html" class="orc-voltar">← Voltar ao site</a>
+      <a href="orcamento.html" class="btn btn-red btn-header">Quero esse sistema</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="pts-hero">
+      <div class="pts-hero-copy">
+        <span class="tag">● Painel Gestor</span>
+        <h1>Sua operação inteira <em class="rubro">num painel só.</em></h1>
+        <p class="pts-sub">
+          Um sistema web sob medida, com banco de dados e relatórios em tempo real.
+          Vendas, equipe, metas e indicadores — tudo organizado, atualizado ao vivo
+          e acessível de qualquer lugar. Decisão com <strong>dado</strong>, não com achismo.
+        </p>
+        <div class="hero-actions">
+          <a href="orcamento.html" class="btn btn-red"><span class="btn-ico">→</span>Solicitar orçamento</a>
+          <a href="#como-funciona" class="btn btn-ghost">Como funciona</a>
+        </div>
+      </div>
+
+      <!-- mockup de dashboard desenhado em CSS -->
+      <div class="painel-wrap" aria-hidden="true">
+        <div class="painel">
+          <div class="painel-topo">
+            <span class="painel-dot"></span><span class="painel-dot"></span><span class="painel-dot"></span>
+            <em>DAIK CORP · Painel Gestor</em>
+          </div>
+          <div class="painel-corpo">
+            <aside class="painel-menu">
+              <span class="pm-item ativo"></span>
+              <span class="pm-item"></span>
+              <span class="pm-item"></span>
+              <span class="pm-item"></span>
+              <span class="pm-item"></span>
+            </aside>
+            <div class="painel-main">
+              <div class="painel-kpis">
+                <div class="kpi">
+                  <span class="kpi-label">Faturamento</span>
+                  <span class="kpi-num" data-count="128" data-prefix="R$ " data-suffix="k">R$ 0</span>
+                  <span class="kpi-sobe">▲ 12%</span>
+                </div>
+                <div class="kpi">
+                  <span class="kpi-label">Clientes ativos</span>
+                  <span class="kpi-num" data-count="847" data-suffix="">0</span>
+                  <span class="kpi-sobe">▲ 5%</span>
+                </div>
+                <div class="kpi">
+                  <span class="kpi-label">Metas batidas</span>
+                  <span class="kpi-num" data-count="92" data-suffix="%">0</span>
+                  <span class="kpi-sobe">▲ 8%</span>
+                </div>
+              </div>
+              <div class="painel-grafico">
+                <span class="pg-titulo">Vendas por mês</span>
+                <div class="pg-barras">
+                  <span style="--h:40%"></span><span style="--h:62%"></span>
+                  <span style="--h:48%"></span><span style="--h:78%"></span>
+                  <span style="--h:66%"></span><span style="--h:90%"></span>
+                  <span style="--h:72%"></span>
+                </div>
+              </div>
+              <div class="painel-tabela">
+                <div class="pt-linha pt-head"><span>Cliente</span><span>Status</span></div>
+                <div class="pt-linha"><span>Empresa A</span><span class="pt-ok">Ativo</span></div>
+                <div class="pt-linha"><span>Empresa B</span><span class="pt-ok">Ativo</span></div>
+                <div class="pt-linha"><span>Empresa C</span><span class="pt-pend">Pendente</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMO FUNCIONA ===== -->
+    <section class="section" id="como-funciona">
+      <div class="section-head reveal">
+        <span class="index-tag">● Como funciona</span>
+        <h2>Seus dados, <em class="rubro">organizados</em> e no controle.</h2>
+      </div>
+      <div class="pts-passos">
+        <article class="pts-passo glass reveal">
+          <span class="pts-passo-num">01</span>
+          <h3>Centralizamos tudo</h3>
+          <p>Vendas, clientes, equipe, estoque — o que a sua operação gera vai pra um banco de dados único e organizado.</p>
+        </article>
+        <article class="pts-passo glass reveal">
+          <span class="pts-passo-num">02</span>
+          <h3>Visualização em tempo real</h3>
+          <p>Gráficos e indicadores atualizados ao vivo. Você bate o olho e entende como o negócio está, agora.</p>
+        </article>
+        <article class="pts-passo glass reveal">
+          <span class="pts-passo-num">03</span>
+          <h3>Relatórios automáticos</h3>
+          <p>O que levava horas em planilha sai pronto num clique — por período, por cliente, por equipe.</p>
+        </article>
+        <article class="pts-passo glass reveal">
+          <span class="pts-passo-num">04</span>
+          <h3>Acesso de qualquer lugar</h3>
+          <p>É um sistema web: abre no computador, tablet ou celular, com login seguro, de onde você estiver.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== O QUE VOCÊ ACOMPANHA ===== -->
+    <section class="section">
+      <div class="section-head reveal">
+        <span class="index-tag">● No seu painel</span>
+        <h2>Tudo o que você precisa <em class="rubro">enxergar</em></h2>
+      </div>
+      <ul class="pts-nichos">
+        <li class="glass reveal">Faturamento &amp; Vendas</li>
+        <li class="glass reveal">Clientes &amp; Contratos</li>
+        <li class="glass reveal">Equipe &amp; Produtividade</li>
+        <li class="glass reveal">Metas &amp; Indicadores</li>
+        <li class="glass reveal">Estoque &amp; Produtos</li>
+        <li class="glass reveal">Financeiro &amp; Fluxo de caixa</li>
+        <li class="glass reveal">Relatórios sob medida</li>
+        <li class="glass reveal">Histórico &amp; Auditoria</li>
+      </ul>
+    </section>
+
+    <!-- ===== POR QUE VALE ===== -->
+    <section class="section">
+      <div class="section-head reveal">
+        <span class="index-tag">● Por que vale</span>
+        <h2>Da planilha caótica ao <em class="rubro">controle real</em></h2>
+      </div>
+      <div class="pts-motivos">
+        <div class="pts-motivo reveal">
+          <strong>Fim das planilhas soltas</strong>
+          <p>Um lugar só, sempre atualizado, sem versão duplicada nem dado que ninguém sabe se está certo.</p>
+        </div>
+        <div class="pts-motivo reveal">
+          <strong>Decisão em minutos</strong>
+          <p>Bateu o olho, entendeu, agiu. Sem esperar alguém montar o relatório do mês.</p>
+        </div>
+        <div class="pts-motivo reveal">
+          <strong>Feito para o seu negócio</strong>
+          <p>Não é sistema genérico: construímos os indicadores e telas que a sua operação realmente usa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section cta-section">
+      <div class="cta-band reveal">
+        <div>
+          <h2>Quer esse painel na <em>sua empresa?</em></h2>
+          <p>Monte seu orçamento em 4 passos e receba uma proposta sob medida.</p>
+        </div>
+        <a href="orcamento.html" class="btn btn-dark">Solicitar orçamento</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="orc-footer">
+    <span>© 2026 DAIK CORP · Todos os direitos reservados. · <a href="privacidade.html" class="rodape-link">Política de Privacidade</a></span>
+  </footer>
+
+  <script src="js/painel.js"></script>
+</body>
+</html>

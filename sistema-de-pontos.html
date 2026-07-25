@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema de Ponto Digital — DAIK CORP</title>
+  <meta name="description" content="Registro de ponto de funcionários pelo celular ou tablet, com comprovação por GPS e foto. Controle de jornada digital para empresas com equipes em campo." />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <meta name="theme-color" content="#050505" />
+  <meta property="og:title" content="Sistema de Ponto Digital — DAIK CORP" />
+  <meta property="og:description" content="Entrada e saída de funcionários registradas pelo celular, com GPS e foto. Fim da folha de papel." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pontos.css" />
+</head>
+<body class="pagina-pontos">
+
+  <!-- ===== PRELOADER ===== -->
+  <div id="preloader" aria-hidden="true" style="animation: some-preloader 0.5s ease 2s forwards;"></div>
+    <div class="preloader-inner">
+      <img src="img/logo.png" alt="" class="preloader-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+      <span class="preloader-fallback" style="display:none">DAIK&nbsp;CORP</span>
+      <div class="preloader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <div class="estrelas" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="aurora aurora-1" aria-hidden="true"></div>
+  <div class="aurora aurora-2" aria-hidden="true"></div>
+  <img src="img/logo.png" alt="" class="pts-marca" aria-hidden="true"
+       onerror="this.style.display='none'" />
+
+  <header class="site-header scrolled">
+    <a class="brand" href="index.html">
+      <img src="img/logo.png" alt="DAIK CORP" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+      <span class="brand-fallback" style="display:none">DAIK<em>CORP</em></span>
+    </a>
+    <div class="pts-header-acoes">
+      <a href="index.html" class="orc-voltar">← Voltar ao site</a>
+      <a href="orcamento.html" class="btn btn-red btn-header">Quero esse sistema</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="pts-hero">
+      <div class="pts-hero-copy">
+        <span class="tag">● Ponto Digital</span>
+        <h1>Sua equipe bateu ponto. <em class="rubro">Com prova.</em></h1>
+        <p class="pts-sub">
+          Registro de entrada e saída pelo celular do funcionário ou por tablet
+          fixo no posto — com <strong>localização por GPS e foto</strong> no momento
+          do registro. Fim da folha de papel, do "esqueci de assinar" e da dúvida
+          se a pessoa estava mesmo lá.
+        </p>
+        <div class="hero-actions">
+          <a href="orcamento.html" class="btn btn-red"><span class="btn-ico">→</span>Solicitar orçamento</a>
+          <a href="#como-funciona" class="btn btn-ghost">Como funciona</a>
+        </div>
+      </div>
+
+      <!-- mockup de celular desenhado em CSS -->
+      <div class="pts-fone-wrap" aria-hidden="true">
+        <div class="pts-fone">
+          <div class="pts-fone-notch"></div>
+          <div class="pts-fone-tela">
+            <div class="pts-app-topo">
+              <span class="pts-app-oi">Olá, Carlos</span>
+              <span class="pts-app-loja">Posto Central · Vigilante</span>
+            </div>
+            <div class="pts-relogio-box">
+              <span class="pts-relogio" id="pts-relogio">07:58:24</span>
+              <span class="pts-data" id="pts-data">Sábado, 25 de julho</span>
+            </div>
+            <div class="pts-verifica">
+              <span class="pts-check"><i>●</i> GPS confirmado no posto</span>
+              <span class="pts-check"><i>●</i> Foto de verificação pronta</span>
+            </div>
+            <button class="pts-btn" type="button">Registrar Entrada</button>
+            <div class="pts-ultimo">
+              Último registro: <strong>Saída ontem às 19:02 ✓</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMO FUNCIONA ===== -->
+    <section class="section" id="como-funciona">
+      <div class="section-head reveal">
+        <span class="index-tag">● Como funciona</span>
+        <h2>Simples para o funcionário.<br /><em class="rubro">Controle total</em> para você.</h2>
+        <div class="radar" aria-hidden="true">
+          <span class="radar-alvo"></span>
+        </div>
+      </div>
+      <div class="pts-passos">
+        <article class="pts-passo glass reveal">
+          <span class="pts-passo-num">01</span>
+          <h3>Funcionário registra</h3>
+          <p>Ao chegar e ao sair, ele bate o ponto pelo próprio celular ou no tablet fixo do posto. Leva segundos.</p>
+        </article>
+        <article class="pts-passo glass reveal">
+          <span class="pts-passo-num">02</span>
+          <h3>GPS + foto comprovam</h3>
+          <p>Cada registro grava a localização e uma foto no momento exato. Prova de que a pessoa estava lá, na hora certa.</p>
+        </article>
+        <article class="pts-passo glass reveal">
+          <span class="pts-passo-num">03</span>
+          <h3>Tudo cai no sistema</h3>
+          <p>Os registros vão direto pro banco de dados, em tempo real. Nada de folha de papel pra digitar depois.</p>
+        </article>
+        <article class="pts-passo glass reveal">
+          <span class="pts-passo-num">04</span>
+          <h3>Você vê e decide</h3>
+          <p>Painel do gestor com horas trabalhadas, atrasos, faltas e relatórios prontos pra folha de pagamento.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PARA QUEM ===== -->
+    <section class="section">
+      <div class="section-head reveal">
+        <span class="index-tag">● Para quem</span>
+        <h2>Feito para equipes <em class="rubro">em campo</em></h2>
+      </div>
+      <ul class="pts-nichos">
+        <li class="glass reveal">Segurança Privada</li>
+        <li class="glass reveal">Facilities &amp; Terceirização</li>
+        <li class="glass reveal">Limpeza &amp; Conservação</li>
+        <li class="glass reveal">Portaria &amp; Condomínios</li>
+        <li class="glass reveal">Construção Civil</li>
+        <li class="glass reveal">Logística &amp; Transporte</li>
+        <li class="glass reveal">Eventos</li>
+        <li class="glass reveal">Comércio &amp; Escritórios</li>
+      </ul>
+    </section>
+
+    <!-- ===== POR QUE FUNCIONA ===== -->
+    <section class="section">
+      <div class="section-head reveal">
+        <span class="index-tag">● Por que vale</span>
+        <h2>O fim da <em class="rubro">dúvida</em> na jornada</h2>
+      </div>
+      <div class="pts-motivos">
+        <div class="pts-motivo reveal">
+          <strong>Prova, não palavra</strong>
+          <p>GPS e foto em cada registro eliminam o "fulano bateu por mim" e protegem a empresa em questões trabalhistas.</p>
+        </div>
+        <div class="pts-motivo reveal">
+          <strong>Horas calculadas sozinhas</strong>
+          <p>Jornada, atrasos, faltas e extras somados automaticamente. Sua folha de pagamento deixa de ser um quebra-cabeça.</p>
+        </div>
+        <div class="pts-motivo reveal">
+          <strong>Gestão de longe, controle de perto</strong>
+          <p>Equipes espalhadas em vários postos, todas visíveis num painel só, em tempo real, de onde você estiver.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section cta-section">
+      <div class="cta-band reveal">
+        <div>
+          <h2>Quer esse controle na <em>sua empresa?</em></h2>
+          <p>Monte seu orçamento em 4 passos e receba uma proposta sob medida.</p>
+        </div>
+        <a href="orcamento.html" class="btn btn-dark">Solicitar orçamento</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="orc-footer">
+    <span>© 2026 DAIK CORP · Todos os direitos reservados. · <a href="privacidade.html" class="rodape-link">Política de Privacidade</a></span>
+  </footer>
+
+  <script src="js/pontos.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* ============================================================
+   MOCKUP DO SITE PREMIUM (navegador montando um site)
+   carregar depois de style.css e pontos.css
+   ============================================================ */
+
+.nav-wrap {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.nav-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 45%, rgba(255,43,43,0.2) 0%, transparent 65%);
+  filter: blur(28px);
+  z-index: -1;
+}
+.navegador {
+  width: min(520px, 92vw);
+  border: 1px solid #262626;
+  border-radius: 14px;
+  background: #0b0b0b;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 40px rgba(255,43,43,0.1);
+  animation: nav-flutua 6s ease-in-out infinite;
+}
+@keyframes nav-flutua {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.nav-barra {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.7rem 0.9rem;
+  background: #151515;
+  border-bottom: 1px solid #242424;
+}
+.nav-dot { width: 10px; height: 10px; border-radius: 50%; background: #2c2c2c; }
+.nav-dot:first-child { background: var(--vermelho); }
+.nav-url {
+  flex: 1;
+  margin-left: 0.5rem;
+  background: #0c0c0c;
+  border: 1px solid #242424;
+  border-radius: 8px;
+  padding: 0.3rem 0.7rem;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  color: var(--cinza);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.nav-url i { color: #4ade80; font-size: 0.5rem; font-style: normal; }
+
+/* a "página" sendo montada dentro do navegador */
+.nav-tela {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  background: linear-gradient(180deg, #101010, #0a0a0a);
+}
+.site-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-logo {
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--branco);
+  opacity: 0;
+  animation: monta 0.5s ease forwards;
+  animation-delay: 0.3s;
+}
+.site-menu { display: flex; gap: 5px; }
+.site-menu i {
+  width: 16px; height: 4px;
+  border-radius: 2px;
+  background: #2a2a2a;
+  opacity: 0;
+  animation: monta 0.5s ease forwards;
+}
+.site-menu i:nth-child(1) { animation-delay: 0.5s; }
+.site-menu i:nth-child(2) { animation-delay: 0.6s; }
+.site-menu i:nth-child(3) { animation-delay: 0.7s; }
+
+.site-hero { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.5rem 0; }
+.site-h1 {
+  height: 14px;
+  width: 80%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--vermelho), var(--vermelho-escuro));
+  opacity: 0;
+  animation: monta 0.5s ease forwards;
+  animation-delay: 0.9s;
+}
+.site-h1.curto { width: 55%; animation-delay: 1.05s; }
+.site-txt {
+  height: 7px;
+  width: 90%;
+  border-radius: 3px;
+  background: #262626;
+  opacity: 0;
+  animation: monta 0.5s ease forwards;
+  animation-delay: 1.25s;
+}
+.site-txt.curto { width: 70%; animation-delay: 1.4s; }
+.site-cta {
+  align-self: flex-start;
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 600;
+  opacity: 0;
+  animation: monta 0.5s ease forwards, cta-brilha 3s ease-in-out infinite 2s;
+  animation-delay: 1.6s;
+  box-shadow: 0 0 14px var(--glow);
+}
+@keyframes cta-brilha {
+  0%, 100% { box-shadow: 0 0 10px var(--glow); }
+  50% { box-shadow: 0 0 22px rgba(255,43,43,0.7); }
+}
+
+.site-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.site-card {
+  height: 46px;
+  border-radius: 8px;
+  background: #161616;
+  border: 1px solid #222;
+  opacity: 0;
+  animation: monta-card 0.5s var(--ease-out) forwards;
+}
+.site-card:nth-child(1) { animation-delay: 1.9s; }
+.site-card:nth-child(2) { animation-delay: 2.05s; }
+.site-card:nth-child(3) { animation-delay: 2.2s; }
+
+@keyframes monta {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes monta-card {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 900px) {
+  .nav-wrap { order: -1; margin-top: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .navegador { animation: none; }
+  .nav-tela * { animation: none !important; opacity: 1 !important; }
+}

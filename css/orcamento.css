@@ -1,0 +1,369 @@
+/* ============================================================
+   PÁGINA DE ORÇAMENTO INTERATIVO
+   ============================================================ */
+
+.orc-page { min-height: 100vh; }
+
+/* ============ FUNDO ANIMADO DA PÁGINA ============ */
+
+/* glow vermelho respirando no topo */
+.orc-main::before {
+  content: "";
+  position: fixed;
+  top: -30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 70vh;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 43, 43, 0.1) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  animation: orc-respira 7s ease-in-out infinite;
+}
+@keyframes orc-respira {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* marca d'água gigante da logo */
+.orc-marca {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(70vw, 820px);
+  height: auto;
+  opacity: 0.02;
+  filter: grayscale(1) brightness(2.2);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* símbolos de orçamento flutuando */
+.orc-flutuantes {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.orc-flutuantes span {
+  position: absolute;
+  bottom: -8%;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: rgba(255, 43, 43, 0.14);
+  animation: orc-sobe linear infinite;
+}
+@keyframes orc-sobe {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  8% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-115vh) rotate(18deg); opacity: 0; }
+}
+.orc-flutuantes span:nth-child(1) { left: 8%;  font-size: 1.6rem; animation-duration: 22s; animation-delay: 0s; }
+.orc-flutuantes span:nth-child(2) { left: 20%; font-size: 1.1rem; animation-duration: 26s; animation-delay: 6s; }
+.orc-flutuantes span:nth-child(3) { left: 32%; font-size: 1.3rem; animation-duration: 24s; animation-delay: 12s; }
+.orc-flutuantes span:nth-child(4) { left: 60%; font-size: 1rem;   animation-duration: 28s; animation-delay: 3s; }
+.orc-flutuantes span:nth-child(5) { left: 72%; font-size: 1.4rem; animation-duration: 23s; animation-delay: 9s; }
+.orc-flutuantes span:nth-child(6) { left: 84%; font-size: 1.1rem; animation-duration: 27s; animation-delay: 15s; }
+.orc-flutuantes span:nth-child(7) { left: 92%; font-size: 1.5rem; animation-duration: 25s; animation-delay: 5s; }
+.orc-flutuantes span:nth-child(8) { left: 48%; font-size: 1.2rem; animation-duration: 29s; animation-delay: 18s; }
+
+/* conteúdo acima do fundo */
+.orc-main, .site-header, .orc-footer { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .orc-flutuantes, .orc-marca { display: none; }
+  .orc-main::before { animation: none; }
+}
+.orc-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(7.5rem, 14vh, 9.5rem) var(--pad-x) 4rem;
+}
+
+.orc-voltar {
+  color: var(--prata);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.orc-voltar:hover { color: var(--vermelho); }
+
+.orc-head { text-align: center; margin-bottom: 2.2rem; }
+.orc-head h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 640;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.orc-sub { color: var(--cinza); margin-top: 0.7rem; font-size: 0.95rem; }
+
+/* indicador de passos */
+.orc-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.4rem;
+}
+.orc-step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.orc-step-dot span {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 560;
+  font-size: 0.85rem;
+  color: var(--cinza);
+  background: var(--carbono);
+  border: 1px solid var(--linha);
+  transition: all 0.35s var(--ease-out);
+}
+.orc-step-dot small {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cinza);
+}
+.orc-step-dot.active span {
+  background: var(--vermelho);
+  color: var(--branco);
+  border-color: var(--vermelho);
+  box-shadow: 0 0 20px var(--glow);
+}
+.orc-step-dot.active small { color: var(--branco); }
+.orc-step-dot.done span {
+  border-color: rgba(255, 43, 43, 0.6);
+  color: var(--vermelho);
+}
+.orc-step-line {
+  width: clamp(20px, 6vw, 60px);
+  height: 1px;
+  background: var(--linha);
+  margin-bottom: 1.2rem;
+}
+
+/* grid formulário + resumo */
+.orc-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.orc-form { padding: clamp(1.6rem, 3.5vw, 2.4rem); }
+
+.orc-pane { display: none; }
+.orc-pane.active { display: block; animation: pane-in 0.45s var(--ease-out); }
+@keyframes pane-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.orc-pane h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.orc-hint { color: var(--cinza); font-size: 0.85rem; margin-bottom: 1.4rem; }
+
+/* cards de opção */
+.orc-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+.orc-options-1col { grid-template-columns: 1fr; }
+.orc-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.05rem 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--linha);
+  border-radius: 16px;
+  color: var(--prata);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+}
+.orc-opt:hover { border-color: rgba(255, 43, 43, 0.4); color: var(--branco); }
+.orc-opt.on {
+  background: rgba(255, 43, 43, 0.1);
+  border-color: var(--vermelho);
+  color: var(--branco);
+  box-shadow: 0 0 20px rgba(255, 43, 43, 0.12);
+}
+.orc-opt-ico {
+  width: 22px;
+  height: 22px;
+  color: var(--vermelho);
+  flex: 0 0 auto;
+}
+
+.orc-select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--linha);
+  border-radius: 14px;
+  background: var(--carbono);
+  color: var(--branco);
+  cursor: pointer;
+}
+.orc-select:focus { outline: none; border-color: var(--vermelho); }
+
+.orc-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* navegação */
+.orc-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--linha);
+}
+.orc-nav .btn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
+.orc-erro {
+  color: var(--vermelho);
+  font-size: 0.82rem;
+  text-align: center;
+  flex: 1;
+}
+
+/* resumo */
+.orc-resumo {
+  padding: 1.6rem;
+  position: sticky;
+  top: 110px;
+}
+.orc-resumo h3 {
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 560;
+  margin-bottom: 1.1rem;
+  color: var(--branco);
+}
+.orc-resumo-vazio { color: var(--cinza); font-size: 0.85rem; }
+.orc-resumo-bloco { margin-bottom: 1rem; }
+.orc-resumo-bloco h4 {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--vermelho);
+  margin-bottom: 0.3rem;
+}
+.orc-resumo-bloco p { color: var(--prata); font-size: 0.86rem; }
+
+/* tela de sucesso */
+.orc-sucesso {
+  text-align: center;
+  padding: clamp(2.5rem, 6vw, 4rem);
+  max-width: 560px;
+  margin: 0 auto;
+}
+.orc-sucesso-ico {
+  width: 70px; height: 70px;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--branco);
+  background: linear-gradient(140deg, var(--vermelho), var(--vermelho-escuro));
+  box-shadow: 0 0 40px var(--glow);
+}
+.orc-sucesso h2 {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 640;
+  text-transform: uppercase;
+}
+.orc-sucesso > p { color: var(--prata); margin-top: 0.8rem; }
+.orc-codigo {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  font-weight: 660;
+  letter-spacing: 0.08em;
+  color: var(--vermelho);
+  text-shadow: 0 0 30px var(--glow);
+  margin: 1.2rem 0 0.9rem;
+}
+.orc-sucesso-nota {
+  color: var(--cinza);
+  font-size: 0.88rem;
+  margin-top: 1.4rem;
+  max-width: 40ch;
+  margin-inline: auto;
+}
+.orc-voltar-link {
+  display: inline-block;
+  margin-top: 1.6rem;
+  color: var(--prata);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.orc-voltar-link:hover { color: var(--vermelho); }
+
+/* consulta de andamento */
+.orc-consulta {
+  margin-top: 2rem;
+  padding: clamp(1.6rem, 3.5vw, 2.2rem);
+}
+.orc-consulta h3 { font-size: 1.1rem; font-weight: 580; margin-bottom: 1.1rem; }
+.orc-consulta-linha { display: flex; gap: 0.8rem; }
+.orc-consulta-linha input {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--linha);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--branco);
+  text-transform: uppercase;
+}
+.orc-consulta-linha input:focus { outline: none; border-color: var(--vermelho); }
+.orc-consulta-res { margin-top: 1rem; color: var(--prata); font-size: 0.9rem; min-height: 1.2em; }
+.orc-status { color: var(--vermelho); font-weight: 600; }
+
+.orc-footer {
+  text-align: center;
+  padding: 2rem var(--pad-x);
+  border-top: 1px solid var(--linha);
+  color: var(--cinza);
+  font-size: 0.78rem;
+}
+
+/* responsivo da página de orçamento */
+@media (max-width: 900px) {
+  .orc-grid { grid-template-columns: 1fr; }
+  .orc-resumo { position: static; order: -1; }
+  .orc-options, .orc-fields { grid-template-columns: 1fr; }
+  .orc-step-dot small { display: none; }
+  .orc-nav { flex-wrap: wrap; }
+}

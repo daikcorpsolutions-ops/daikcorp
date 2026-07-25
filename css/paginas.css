@@ -1,0 +1,131 @@
+/* ============================================================
+   PÁGINAS DE APOIO — Política de Privacidade + Obrigado
+   (carregar depois do style.css)
+   ============================================================ */
+
+.orc-voltar {
+  color: var(--prata);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.orc-voltar:hover { color: var(--vermelho); }
+
+.orc-footer {
+  text-align: center;
+  padding: 2rem var(--pad-x);
+  border-top: 1px solid var(--linha);
+  color: var(--cinza);
+  font-size: 0.78rem;
+  position: relative;
+  z-index: 1;
+}
+.rodape-link { color: var(--prata); text-decoration: none; }
+.rodape-link:hover { color: var(--vermelho); }
+
+/* ============ POLÍTICA DE PRIVACIDADE ============ */
+.legal-main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(8rem, 15vh, 10rem) var(--pad-x) 4rem;
+  position: relative;
+  z-index: 1;
+}
+.legal-main h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 640;
+  letter-spacing: -0.02em;
+  margin: 0.6rem 0 0.4rem;
+}
+.legal-data {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cinza);
+  margin-bottom: 2.5rem;
+}
+.legal-main section { margin-bottom: 2.2rem; }
+.legal-main h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: var(--branco);
+}
+.legal-main p {
+  color: var(--prata);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+.legal-main a { color: var(--vermelho); text-decoration: none; }
+.legal-main a:hover { text-decoration: underline; }
+
+/* ============ PÁGINA DE OBRIGADO ============ */
+.obrigado-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(7rem, 14vh, 9rem) var(--pad-x) 4rem;
+  position: relative;
+  z-index: 1;
+}
+.obrigado-box {
+  max-width: 560px;
+  text-align: center;
+  padding: clamp(2.2rem, 5vw, 3.5rem);
+}
+.obrigado-ico {
+  width: 70px; height: 70px;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--branco);
+  background: linear-gradient(140deg, var(--vermelho), var(--vermelho-escuro));
+  box-shadow: 0 0 40px var(--glow);
+}
+.obrigado-box h1 {
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 640;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.obrigado-sub { color: var(--prata); margin-top: 0.9rem; font-size: 0.98rem; }
+
+.obrigado-passos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 1.8rem 0;
+  text-align: left;
+}
+.obrigado-passo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--linha);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.obrigado-passo span {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--vermelho);
+  flex: 0 0 auto;
+}
+.obrigado-passo p { color: var(--prata); font-size: 0.9rem; margin: 0; }
+
+.obrigado-acoes {
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
