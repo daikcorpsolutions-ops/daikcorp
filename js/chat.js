@@ -3,11 +3,24 @@ const chatJanela = document.getElementById("chat-janela");
 const chatMensagens = document.getElementById("chat-mensagens");
 const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
+const chatDica = document.getElementById("chat-dica");
+
+/* mostra a bolha "Fale comigo" uma vez por visita, depois de 3s */
+if (!sessionStorage.getItem("daik_chat_dica_vista")) {
+  setTimeout(() => {
+    if (chatJanela.hidden) {
+      chatDica.classList.add("visivel");
+      setTimeout(() => chatDica.classList.remove("visivel"), 6000);
+    }
+  }, 3000);
+  sessionStorage.setItem("daik_chat_dica_vista", "1");
+}
 
 let historico = [];
 let carregando = false;
 
 chatToggle.addEventListener("click", () => {
+  chatDica.classList.remove("visivel");
   const abrindo = chatJanela.hidden;
   chatJanela.hidden = !abrindo;
   requestAnimationFrame(() => {
