@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/chat.css" />
 </head>
 <body>
 
@@ -516,6 +517,44 @@
     </svg>
   </a>
 
+  <!-- ===== CHATBOT COM IA ===== -->
+  <button type="button" class="chat-fab" id="chat-toggle" aria-label="Abrir chat com assistente virtual">
+    <svg class="chat-fab-icone chat-fab-abrir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+      <path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4A9 9 0 0 1 8 19L3 20l1.3-3.9a8.2 8.2 0 0 1-1.3-4.4A8.4 8.4 0 0 1 11.9 3a8.5 8.5 0 0 1 9 8.5z"/>
+    </svg>
+    <svg class="chat-fab-icone chat-fab-fechar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+
+  <div class="chat-janela" id="chat-janela" hidden>
+    <div class="chat-topo">
+      <div class="chat-topo-info">
+        <span class="chat-topo-badge">
+          <img src="img/logo.png" alt="" onerror="this.style.display='none'" />
+        </span>
+        <div>
+          <strong>Assistente DAIK CORP</strong>
+          <span>Powered by IA · Responde na hora</span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-mensagens" id="chat-mensagens">
+      <div class="chat-msg chat-msg-bot">
+        Olá! 👋 Sou o assistente virtual da DAIK CORP. Posso te ajudar a entender
+        nossos serviços de tecnologia, IA, sistemas e segurança. Como posso ajudar?
+      </div>
+    </div>
+    <form class="chat-form" id="chat-form">
+      <input type="text" id="chat-input" placeholder="Digite sua pergunta..." autocomplete="off" />
+      <button type="submit" aria-label="Enviar mensagem">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="footer-grid">
@@ -553,5 +592,6 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/chat.js"></script>
 </body>
 </html>

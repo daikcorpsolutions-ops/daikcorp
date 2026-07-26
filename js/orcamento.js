@@ -4,6 +4,11 @@
    · Consulta de andamento (local, preparado para o backend)
    ============================================================ */
 
+/* ---------- CONEXÃO COM O SUPABASE ---------- */
+const SUPABASE_URL = "https://dymnvggnliiemfxlpbmg.supabase.co";
+const SUPABASE_KEY = "sb_publishable_SCaj_bX9FCc6FPn8QFXj4g_2BuZaX08";
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 const TOTAL_PASSOS = 4;
 let passoAtual = 1;
 
@@ -150,16 +155,37 @@ async function finalizar() {
     descricao: document.getElementById("orc-desc").value.trim(),
   };
 
-  // Salva localmente (mantém a consulta de andamento funcionando)
+  // Salva localmente (fallback caso o Supabase falhe)
   const lista = JSON.parse(localStorage.getItem("daik_orcamentos") || "[]");
   lista.push(pedido);
   localStorage.setItem("daik_orcamentos", JSON.stringify(lista));
 
-  // Mostra a tela de sucesso já (não trava esperando o email)
+  // Mostra a tela de sucesso já (não trava esperando nada)
   document.getElementById("orc-codigo").textContent = pedido.codigo;
   document.getElementById("wizard").hidden = true;
   document.getElementById("sucesso").hidden = false;
   window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // Salva no banco de dados (Supabase) em segundo plano
+  try {
+    const { error } = await supabaseClient.from("orcamentos").insert({
+      codigo: pedido.codigo,
+      nome: pedido.nome,
+      empresa: pedido.empresa,
+      whatsapp: pedido.whatsapp,
+      email: pedido.email,
+      descricao: pedido.descricao,
+      servicos: pedido.servicos.join(", "),
+      detalhes: pedido.detalhes.join(", "),
+      porte: pedido.porte,
+      prazo: pedido.prazo,
+      investimento: pedido.investimento,
+      status: pedido.status,
+    });
+    if (error) console.error("Erro ao salvar no Supabase:", error);
+  } catch (err) {
+    console.error("Erro de conexão com o Supabase:", err);
+  }
 
   // Envia o email pra empresa em segundo plano
   try {
@@ -185,7 +211,7 @@ document.getElementById("copiar-codigo").addEventListener("click", () => {
 });
 
 /* ---------- CONSULTA DE ANDAMENTO ---------- */
-document.getElementById("consulta-btn").addEventListener("click", () => {
+document.getElementById("consulta-btn").addEventListener("click", async () => {
   const codigo = document.getElementById("consulta-codigo").value.trim().toUpperCase();
   const res = document.getElementById("consulta-res");
 
@@ -194,6 +220,27 @@ document.getElementById("consulta-btn").addEventListener("click", () => {
     return;
   }
 
+  res.textContent = "Consultando...";
+
+  // 1. Tenta buscar no Supabase (funciona de qualquer aparelho)
+  try {
+    const { data, error } = await supabaseClient
+      .from("orcamentos")
+      .select("*")
+      .eq("codigo", codigo)
+      .single();
+
+    if (data && !error) {
+      res.innerHTML = `<strong>${data.codigo}</strong> · ${new Date(data.created_at).toLocaleString("pt-BR")}<br />
+        Status: <span class="orc-status">${data.status}</span><br />
+        Serviços: ${data.servicos || "-"}`;
+      return;
+    }
+  } catch (err) {
+    console.error("Erro ao consultar Supabase:", err);
+  }
+
+  // 2. Se não achou no Supabase, tenta no localStorage (mesmo aparelho)
   const lista = JSON.parse(localStorage.getItem("daik_orcamentos") || "[]");
   const pedido = lista.find((p) => p.codigo === codigo);
 
@@ -202,8 +249,7 @@ document.getElementById("consulta-btn").addEventListener("click", () => {
       Status: <span class="orc-status">${pedido.status}</span><br />
       Serviços: ${pedido.servicos.join(", ")}`;
   } else {
-    res.textContent =
-      "Código não encontrado neste dispositivo. A consulta online (de qualquer aparelho) entra no ar junto com o nosso sistema.";
+    res.textContent = "Código não encontrado. Confira se digitou certinho.";
   }
 });
 

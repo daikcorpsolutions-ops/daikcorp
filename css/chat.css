@@ -1,0 +1,146 @@
+/* ============ CHATBOT COM IA ============ */
+.chat-fab {
+  position: fixed;
+  right: 1.6rem;
+  bottom: 6.6rem; /* fica empilhado ACIMA do botão do WhatsApp */
+  z-index: 200;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(140deg, var(--vermelho), var(--vermelho-escuro));
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(255, 43, 43, 0.4);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s;
+}
+.chat-fab:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 44px rgba(255, 43, 43, 0.55);
+}
+.chat-fab-icone { position: absolute; transition: opacity 0.25s, transform 0.25s; }
+.chat-fab-fechar { opacity: 0; transform: scale(0.5); }
+.chat-fab.aberto .chat-fab-abrir { opacity: 0; transform: scale(0.5); }
+.chat-fab.aberto .chat-fab-fechar { opacity: 1; transform: scale(1); }
+
+.chat-janela {
+  position: fixed;
+  right: 1.6rem;
+  bottom: 6.6rem;
+  z-index: 199;
+  width: min(360px, calc(100vw - 2.4rem));
+  height: min(520px, calc(100vh - 8rem));
+  background: rgba(17, 17, 17, 0.97);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--linha);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+  pointer-events: none;
+}
+.chat-janela.aberta {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.chat-topo {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--linha);
+  background: rgba(255, 43, 43, 0.06);
+}
+.chat-topo-info { display: flex; align-items: center; gap: 0.8rem; }
+.chat-topo-badge {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: #0c0c0c;
+  border: 1px solid rgba(255, 43, 43, 0.4);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+.chat-topo-badge img { width: 110%; height: 110%; object-fit: contain; }
+.chat-topo-info strong { font-family: var(--font-display); font-size: 0.92rem; display: block; }
+.chat-topo-info span { font-size: 0.72rem; color: var(--cinza); }
+
+.chat-mensagens {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.chat-msg {
+  max-width: 85%;
+  padding: 0.7rem 0.95rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.chat-msg-bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--linha);
+  border-bottom-left-radius: 4px;
+}
+.chat-msg-user {
+  align-self: flex-end;
+  background: linear-gradient(120deg, var(--vermelho), var(--vermelho-escuro));
+  color: var(--branco);
+  border-bottom-right-radius: 4px;
+}
+.chat-msg-digitando { display: flex; gap: 4px; align-items: center; padding: 0.9rem 1rem; }
+.chat-msg-digitando span {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cinza);
+  animation: chat-pulso 1.1s ease-in-out infinite;
+}
+.chat-msg-digitando span:nth-child(2) { animation-delay: 0.15s; }
+.chat-msg-digitando span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes chat-pulso { 0%, 60%, 100% { opacity: 0.3; } 30% { opacity: 1; } }
+
+.chat-form {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.9rem;
+  border-top: 1px solid var(--linha);
+}
+.chat-form input {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--branco);
+}
+.chat-form input:focus {
+  outline: none;
+  border-color: var(--vermelho);
+}
+.chat-form button {
+  width: 40px; height: 40px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: var(--vermelho);
+  color: var(--branco);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s;
+}
+.chat-form button:hover { transform: scale(1.08); }
+
+@media (max-width: 600px) {
+  .chat-fab { right: 1.1rem; bottom: 5.8rem; }
+  .chat-janela { right: 0.7rem; bottom: 5.8rem; }
+}

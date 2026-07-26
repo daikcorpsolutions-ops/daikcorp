@@ -1,0 +1,124 @@
+.gestao-page { background: var(--preto); min-height: 100vh; }
+
+.gestao-badge {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vermelho);
+  border: 1px solid rgba(255, 43, 43, 0.4);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+}
+
+.gestao-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 7.5rem var(--pad-x) 4rem;
+}
+
+.gestao-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+.gestao-head h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  font-weight: 640;
+}
+
+.gestao-filtros {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.4rem;
+}
+.gestao-filtros input,
+.gestao-filtros select {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--branco);
+}
+.gestao-filtros select option,
+.orc-card-rodape select option {
+  background: var(--carbono);
+  color: var(--branco);
+}
+.gestao-filtros input { flex: 1; min-width: 220px; }
+.gestao-filtros select { cursor: pointer; }
+
+.gestao-status {
+  color: var(--cinza);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.gestao-lista { display: flex; flex-direction: column; gap: 0.9rem; }
+
+.orc-card {
+  padding: 1.3rem 1.5rem;
+  border-radius: 16px;
+}
+.orc-card-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+.orc-card-codigo {
+  font-family: var(--font-display);
+  font-weight: 620;
+  color: var(--vermelho);
+  letter-spacing: 0.02em;
+}
+.orc-card-data { font-size: 0.78rem; color: var(--cinza); }
+
+.orc-card-corpo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--prata);
+  margin-bottom: 1rem;
+}
+.orc-card-corpo strong { color: var(--branco); }
+.orc-card-corpo .full { grid-column: 1 / -1; }
+
+.orc-card-rodape {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.orc-card-rodape select {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  background: var(--carbono);
+  color: var(--branco);
+  cursor: pointer;
+}
+.orc-card-salvo {
+  font-size: 0.78rem;
+  color: var(--vermelho);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.orc-card-salvo.on { opacity: 1; }
+
+@media (max-width: 640px) {
+  .orc-card-corpo { grid-template-columns: 1fr; }
+}
