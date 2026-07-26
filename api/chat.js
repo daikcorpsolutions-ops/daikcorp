@@ -48,7 +48,7 @@ orçamento personalizado.
           contents: conteudos,
           systemInstruction: { parts: [{ text: instrucaoSistema }] },
           generationConfig: {
-            maxOutputTokens: 300,
+            maxOutputTokens: 500,
             temperature: 0.7,
           },
         }),
